@@ -18,5 +18,6 @@ Route::get('/', 'PagesController@index');
 Route::get('/studentRegister', 'PagesController@stu_reg');
 Route::get('/parentRegister', 'PagesController@par_reg');
 Route::get('/promote', 'PagesController@promote');
-Route::get('/account', 'PagesController@account');
+Route::get('/fees', 'PagesController@fee');
+Route::get('/products', 'PagesController@product');
 Route::get('/search', 'PagesController@search');
