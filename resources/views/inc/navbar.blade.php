@@ -7,10 +7,10 @@
     <div class="navbar-expand" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/studentRegister">Add new Student</a>
+                <a class="nav-link" href="/registerStudents/create">Add new Student</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/parentRegister">Register Parent</a>
+                <a class="nav-link" href="/registerParent/create">Register Parent</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/promote">Promote</a>

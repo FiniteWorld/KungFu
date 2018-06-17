@@ -9,10 +9,10 @@ class PagesController extends Controller
         $title = 'Welcome!';
         return view('pages.main')->with('title', $title);
     }
-    public function stu_reg(){
+  /*  public function stu_reg(){
         $title = 'Student Registration';
         return view('pages.student')->with('title', $title);
-    }
+    }*/
     public function par_reg(){
         $title = 'Parent Registration';
         return view('pages.parent')->with('title', $title);
