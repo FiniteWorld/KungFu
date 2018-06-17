@@ -16,7 +16,7 @@
             <label for="inputEmail4">Email</label>
             <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
-        <div class="form-group>
+        <div class="form-group">
       <label for="dob">Date Of Birth</label>
         <input type="date" class="form-control" id="dob" placeholder="dd/mm/yy">
         </div>
