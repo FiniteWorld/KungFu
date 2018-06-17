@@ -16,29 +16,18 @@
                 <a class="nav-link" href="/promote">Promote</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/account">Account Information</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="/search">Search</a>
             </li>
-
+            <li class="nav-item dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown">
+                    Account Information
+                </button>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/fees">Fee Record</a>
+                    <a class="dropdown-item" href="/products">Products</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
-{{--
-
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-            <a class="navbar-brand" href="#">{{config("app.name")}}</a>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/studentRegister">Add new Student</a></li>
-            <li><a href="/parentRegister">Register Parent</a></li>
-            <li><a href="/promote">Promote</a></li>
-            <li><a href="/account">Account Information</a></li>
-            <li><a href="/search">Search</a></li>
-        </ul>
-    </div>
-</nav>
---}}

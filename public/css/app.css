@@ -68,7 +68,7 @@ body {
     color: #212529;
     text-align: left;
     #background-color: #f5f8fa;
-    #backgrounf-image: url("/public/images/bg.jpg")
+    #background-image: url("http://www.happehtheory.com/HappehKungFu/2013/12/31/the-secret-of-the-yin-yang-symbol-05/");
 }
 
 [tabindex="-1"]:focus {

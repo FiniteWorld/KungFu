@@ -21,12 +21,17 @@ class PagesController extends Controller
         $title='Promote Student';
         return view('pages.promote')->with('title', $title);
     }
-    public function account(){
-        $title='Account Information';
-        return view('pages.account')->with('title', $title);
-    }
+
     public function search(){
         $title='Search';
         return view('pages.search')->with('title', $title);
+    }
+    public function fee(){
+        $title='Fees';
+        return view('pages.fees')->with('title', $title);
+    }
+    public function product(){
+        $title='Products';
+        return view('pages.product')->with('title', $title);
     }
 }

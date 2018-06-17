@@ -1,5 +1,6 @@
 @extends('layout.app')
 @section('content')
+    <h2>This is student registration page</h2>
     <form>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -16,7 +17,7 @@
             <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
         <div class="form-group>
-      <label for="dob"> Date Of Birth</label>
+      <label for="dob">Date Of Birth</label>
         <input type="date" class="form-control" id="dob" placeholder="dd/mm/yy">
         </div>
 
@@ -64,4 +65,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
 @endsection
