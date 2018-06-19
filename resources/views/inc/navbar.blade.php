@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/registerParent/create">Register Parent</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/promote">Promote</a>
+                <a class="nav-link" href="/registerStudents">Promote</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/search">Search</a>

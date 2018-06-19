@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Students;
+use DB;
+use App\students;
 
 class Stu_register extends Controller
 {
@@ -14,7 +15,11 @@ class Stu_register extends Controller
      */
     public function index()
     {
-        //
+        //return students::all();
+        $stu = students::all();
+        return view('pages.promote')->with('stu', $stu);
+
+
     }
 
     /**
@@ -24,9 +29,7 @@ class Stu_register extends Controller
      */
     public function create()
     {
-        $title = 'Add new Student';
-//        return view('pages.student');
-        return view('pages.student')->with('title', $title);
+        return view('pages.student');
     }
 
     /**
@@ -38,7 +41,7 @@ class Stu_register extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'fname' => 'required',
+            'name' => 'required',
             'lname' => 'required',
             'dob' => 'required',
             'email' => 'required',
@@ -49,9 +52,8 @@ class Stu_register extends Controller
             'phone' => 'required',
             'rank' => 'required',
         ]);
-
-   /*     $stu = new Students;
-        $stu->fname = $request->input('fname');
+        $stu = new students;
+        $stu->name = $request->input('name');
         $stu->lname = $request->input('lname');
         $stu->dob = $request->input('dob');
         $stu->email = $request->input('email');
@@ -61,9 +63,11 @@ class Stu_register extends Controller
         $stu->zip = $request->input('zip');
         $stu->phone = $request->input('phone');
         $stu->rank = $request->input('rank');
-        $stu->save();*/
-        return 123;
-      //  return redirect('/')->with('success', 'Registered Successfully!');
+        $stu->save();
+
+        //return User::query()->get();
+        return redirect('/')->with('success', 'Registered Successfully!');
+
     }
 
     /**
@@ -85,7 +89,8 @@ class Stu_register extends Controller
      */
     public function edit($id)
     {
-        //
+        $stu = students::find($id);
+        return $stu;
     }
 
     /**
@@ -97,7 +102,23 @@ class Stu_register extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        $stu -> id = $request->$id;
+//        $stu->rank = $request->rank;
+
+//        $stu = students::find($id->input('id'));
+//        $stu->rank = $request->input('rank');
+//       /* $stu->pfname = $request->input('pfname');
+//        $stu->plname = $request->input('plname');
+//        $stu->pemail = $request->input('pemail');
+//        $stu->pcontact = $request->input('pcontact');*/
+//        $stu->save();
+
+        //return User::query()->get();
+        $rank = $request->input('rank');
+        DB::update('update students set rank = ? where id = ?', [$rank, $id]);
+        echo "Record update successs";
+        //return redirect('/')->with('success', 'Promoted Successfully!');
+
     }
 
     /**

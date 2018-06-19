@@ -13,14 +13,14 @@ class PagesController extends Controller
         $title = 'Student Registration';
         return view('pages.student')->with('title', $title);
     }*/
-    public function par_reg(){
+  /*  public function par_reg(){
         $title = 'Parent Registration';
         return view('pages.parent')->with('title', $title);
-    }
-    public function promote(){
-        $title='Promote Student';
-        return view('pages.promote')->with('title', $title);
-    }
+    }*/
+//    public function promote(){
+//        $title='Promote Student';
+//        return view('pages.promote')->with('title', $title);
+//    }
 
     public function search(){
         $title='Search';

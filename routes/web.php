@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('pages.main');
 });
 Route::get('/', 'PagesController@index');
-Route::get('/promote', 'PagesController@promote');
+
 Route::get('/fees', 'PagesController@fee');
 Route::get('/products', 'PagesController@product');
 Route::get('/search', 'PagesController@search');
+
 Route::resource('registerStudents','Stu_register');
-Route::resource('registerParent', 'Parent_register')
-;
+Route::resource('registerParent','Parent_register');
