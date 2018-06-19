@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 use App\students;
+use Illuminate\Support\Facades\Input;
 
 class Stu_register extends Controller
 {
@@ -55,18 +57,40 @@ class Stu_register extends Controller
         $stu = new students;
         $stu->name = $request->input('name');
         $stu->lname = $request->input('lname');
-        $stu->dob = $request->input('dob');
-        $stu->email = $request->input('email');
-        $stu->address = $request->input('address');
-        $stu->city = $request->input('city');
-        $stu->state = $request->input('state');
-        $stu->zip = $request->input('zip');
-        $stu->phone = $request->input('phone');
-        $stu->rank = $request->input('rank');
-        $stu->save();
 
-        //return User::query()->get();
-        return redirect('/')->with('success', 'Registered Successfully!');
+        $d = \Carbon\Carbon::parse($request->input('dob'));
+        $now = \Carbon\Carbon::now();
+        $age = $now->diffInYears($d);
+        if ($age < 18) {
+            //redirect()->route('Parent_register@create')->with('message', 'You need to register the details of parent as well!!');
+            //redirect()->action('Parent_register@create');
+            $stu->dob = $request->input('dob');
+            $stu->email = $request->input('email');
+            $stu->address = $request->input('address');
+            $stu->city = $request->input('city');
+            $stu->state = $request->input('state');
+            $stu->zip = $request->input('zip');
+            $stu->phone = $request->input('phone');
+            $stu->rank = $request->input('rank');
+            $stu->save();
+            return redirect('/registerParent/create')->with('success', 'You need to register the details of one parent as well!!');
+        } else {
+            $stu->dob = $request->input('dob');
+            $stu->email = $request->input('email');
+            $stu->address = $request->input('address');
+            $stu->city = $request->input('city');
+            $stu->state = $request->input('state');
+            $stu->zip = $request->input('zip');
+            $stu->phone = $request->input('phone');
+            $stu->rank = $request->input('rank');
+            $stu->save();
+            return redirect('/')->with('success', 'Student Registered Successfully!');
+        }
+        //return $age;
+        // $stu->save();
+        //return redirect('/')->with('success', 'You added the detail of parent and student correctly!!');//return User::query()->get();
+        //return redirect('/')->with('success', 'Registered Successfully!');
+        // return $age;
 
     }
 
@@ -97,29 +121,15 @@ class Stu_register extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-//        $stu -> id = $request->$id;
-//        $stu->rank = $request->rank;
 
-//        $stu = students::find($id->input('id'));
-//        $stu->rank = $request->input('rank');
-//       /* $stu->pfname = $request->input('pfname');
-//        $stu->plname = $request->input('plname');
-//        $stu->pemail = $request->input('pemail');
-//        $stu->pcontact = $request->input('pcontact');*/
-//        $stu->save();
-
-        //return User::query()->get();
-        $rank = $request->input('rank');
-        DB::update('update students set rank = ? where id = ?', [$rank, $id]);
-        echo "Record update successs";
-        //return redirect('/')->with('success', 'Promoted Successfully!');
 
     }
+
 
     /**
      * Remove the specified resource from storage.

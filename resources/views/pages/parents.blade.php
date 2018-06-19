@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
     <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">REGISTER PARENT</h1>
-    {!! Form::open(['action'=>['Parent_register@update', $stu[0]->id], 'method' => 'POST'])!!}
+    {!! Form::open(['action'=>'Parent_register@update2','method' => 'POST'])!!}
 
     <div class="form-group">
         {{Form:: label ('id', 'Student Id:')}}
@@ -20,11 +20,11 @@
     </div>
 
     <div class="form-check form-check-inline">
-        {{Form::radio('mother', 'mother', true)}}
+        {{Form::radio('relation', 'mother')}}
         {{Form:: label ('relation', 'Mother')}}
     </div>
     <div class="form-check form-check-inline">
-        {{Form::radio('father', 'father', true)}}
+        {{Form::radio('relation', 'father')}}
         {{Form:: label ('relation', 'Father')}}
     </div>
     <div class="form-row">

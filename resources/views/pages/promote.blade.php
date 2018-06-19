@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
     <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">Change Belt Rank Here!!</h1>
-    {!! Form::open(['action'=> ['Stu_register@update', $stu[0]->id], 'method' => 'POST'])!!}
+    {!! Form::open(['action'=> 'Stu_register@update' ,'method' => 'POST'])!!}
     <table id="example" class="table table-hover table-bordered">
         <thead>
         <tr>

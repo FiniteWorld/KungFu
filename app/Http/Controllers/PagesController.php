@@ -13,10 +13,10 @@ class PagesController extends Controller
         $title = 'Student Registration';
         return view('pages.student')->with('title', $title);
     }*/
-  /*  public function par_reg(){
+    public function par_reg(){
         $title = 'Parent Registration';
-        return view('pages.parent')->with('title', $title);
-    }*/
+        return view('pages.p_student')->with('title', $title);
+    }
 //    public function promote(){
 //        $title='Promote Student';
 //        return view('pages.promote')->with('title', $title);
@@ -25,6 +25,10 @@ class PagesController extends Controller
     public function search(){
         $title='Search';
         return view('pages.search')->with('title', $title);
+    }
+    public function attendance(){
+        $title='Attendance';
+        return view('pages.attendance')->with('title', $title);
     }
     public function fee(){
         $title='Fees';

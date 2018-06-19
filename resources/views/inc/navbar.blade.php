@@ -9,11 +9,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="/registerStudents/create">Add new Student</a>
             </li>
-            <li class="nav-item">
+            {{--<li class="nav-item">
                 <a class="nav-link" href="/registerParent/create">Register Parent</a>
-            </li>
+            </li>--}}
             <li class="nav-item">
-                <a class="nav-link" href="/registerStudents">Promote</a>
+                <a class="nav-link" href="/registerP2S">Register Parent</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/registerStudents/update">Promote</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/search">Search</a>
