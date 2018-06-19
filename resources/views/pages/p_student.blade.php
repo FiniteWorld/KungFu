@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-    <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">REGISTER PARENT</h1>
+    <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">REGISTER PARENT AS A STUDENT</h1>
     {!! Form::open(['action'=>'Parent_register@store','method' => 'POST'])!!}
 
     <div class="form-group">

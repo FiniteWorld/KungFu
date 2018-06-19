@@ -57,6 +57,9 @@ class FeesController extends Controller
         return redirect('/')->with('success', 'Fee Success!');
 
 
+
+    }
+    public function attendance(Request $request){
         $data = Input::get('type');
 
 
@@ -75,7 +78,27 @@ class FeesController extends Controller
 
         //return User::query()->get();
         return redirect('/')->with('success', 'Fee Success!');*/
+    }
+
+    public function update_rank(Request $request){
+
+        $this->validate($request, [
+            'id' => 'required',
+            'rank' => 'required'
+        ]);
+
+        $update_rank = array(
+            'rank' => $request->input('rank'),
+
+        );
+
+        DB::table('students')
+            ->where('id', $request->get('id'))
+            ->update($update_rank);
+
+        return redirect('/')->with('success', 'The student rank has been successfully updated!!');
 
     }
+
 
 }

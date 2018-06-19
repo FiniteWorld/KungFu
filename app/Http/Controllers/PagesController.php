@@ -17,10 +17,11 @@ class PagesController extends Controller
         $title = 'Parent Registration';
         return view('pages.p_student')->with('title', $title);
     }
-//    public function promote(){
-//        $title='Promote Student';
-//        return view('pages.promote')->with('title', $title);
-//    }
+
+    public function promote(){
+        $title='Promote Student';
+        return view('pages.promote')->with('title', $title);
+    }
 
     public function search(){
         $title='Search';

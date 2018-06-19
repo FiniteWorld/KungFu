@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('pages.main');
 });
 Route::get('/', 'PagesController@index');
-
 Route::get('/fees', 'PagesController@fee');
 Route::get('/products', 'PagesController@product');
 Route::get('/search', 'PagesController@search');
@@ -27,4 +26,4 @@ Route::get('/registerParent/create','Parent_register@create');
 Route::put('/registerParent/create','Parent_register@update2' );
 Route::resource('registerStudents','Stu_register');
 Route::resource('registerParent','Parent_register');
-Route::post('/registerP2S','PagesController@par_reg');
+Route::get('/registerP2S','PagesController@par_reg');

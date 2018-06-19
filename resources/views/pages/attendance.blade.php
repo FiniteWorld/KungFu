@@ -12,7 +12,7 @@
                 <div class="form-group">
 
                     {{Form:: label ('type', 'Beginner')}}
-                    {{Form::checkbox('type[]', 'B', false);}}
+                    {{Form::checkbox('type[]', 'B', false)}}
                     {{Form:: label ('type', 'Intermediate')}}
                 {{Form::checkbox('type[]', 'I', false)}}
                     {{Form:: label ('type', 'Expert')}}

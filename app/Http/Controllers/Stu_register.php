@@ -18,8 +18,9 @@ class Stu_register extends Controller
     public function index()
     {
         //return students::all();
-        $stu = students::all();
-        return view('pages.promote')->with('stu', $stu);
+       // $stu = students::all();
+        return 123;
+        //return view('pages.promote');
 
 
     }
@@ -126,8 +127,7 @@ class Stu_register extends Controller
      */
     public function update(Request $request)
     {
-
-
+        //
     }
 
 
@@ -138,6 +138,11 @@ class Stu_register extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+
+    public function update2(Request $request)
     {
         //
     }

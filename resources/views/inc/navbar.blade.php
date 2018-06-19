@@ -18,7 +18,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="/registerStudents/update">Promote</a>
+                <a class="nav-link" href="/registerStudents/index">Promote</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/search">Search</a>
@@ -30,7 +30,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="/fees">Fee Record</a>
-                    <a class="dropdown-item" href="/products">Products</a>
+                    <a class="dropdown-item" href="/attendance">Attendance Record</a>
                 </div>
             </li>
         </ul>
