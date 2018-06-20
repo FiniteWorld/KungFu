@@ -13,7 +13,7 @@
 
     <title>{{config('app.name', 'KungFu')}}</title>
 </head>
-<body style="background-image: url('/assets/images/t.jpg'); background-size: cover" >
+<body style="background-image: url('/assets/images/t.jpg'); background-size: auto" >
 
 @include('inc.navbar')
 <div id="main">

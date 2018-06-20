@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\attendance;
 use DB;
 use App\students;
 use Illuminate\Http\Request;
@@ -57,24 +58,45 @@ class PagesController extends Controller
     public function q(Request $request)
     {
         $stu = students::all();
-
+        $att=attendance::all();
         $choice = $request->input('category');
 
         if ($choice == 'All') {
             $stu = DB::select('select * from students');
             return view('pages.search2')->with('stu',$stu);
-        }else if($choice == 'Attendance'){
+        }else if($choice == 'A'){
 
+           // $att = DB::table('attendances')->get();
+             $att = DB::select('select * from attendances');
 
-        }else if($choice == 'Beginner'){
+             return view('pages.att_record')->with('att', $att);
 
-        }else if($choice == 'Intermediate'){
+        }else if($choice == 'B'){
+            $att = DB::table('students')
+                ->join('stu_payments', 'students.id', '=', 'stu_payments.id')
+                ->select( 'students.name', 'stu_payments.*')
+                ->where('purchase_type','Beginner')
+                ->get();
+            return view('pages.record_b')->with('att', $att);
 
-        }else if($choice == 'Expert'){
+        }else if($choice == 'I'){
+            $att = DB::table('students')
+                ->join('stu_payments', 'students.id', '=', 'stu_payments.id')
+                ->select( 'students.name', 'stu_payments.*')
+                ->where('purchase_type','Intermediate')
+                ->get();
+            return view('pages.record_i')->with('att', $att);
+
+        }else if($choice == 'E'){
+            $att = DB::table('students')
+                ->join('stu_payments', 'students.id', '=', 'stu_payments.id')
+                ->select( 'students.name', 'stu_payments.*')
+                ->where('purchase_type','Expert')
+                ->get();
+            return view('pages.record_e')->with('att', $att);
 
         }
-        /*select * from attendance where id = ?;
-select * from attendance where date = '20-jan-2016';
+        /*
 
 $query = DB::table('attendance')
     ->select(DB::raw('*'))

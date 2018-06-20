@@ -58,8 +58,7 @@ class Stu_register extends Controller
         $now = \Carbon\Carbon::now();
         $age = $now->diffInYears($d);
         if ($age < 18) {
-            //redirect()->route('Parent_register@create')->with('message', 'You need to register the details of parent as well!!');
-            //redirect()->action('Parent_register@create');
+
             $stu->dob = $request->input('dob');
             $stu->email = $request->input('email');
             $stu->address = $request->input('address');

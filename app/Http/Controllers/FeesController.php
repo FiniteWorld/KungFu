@@ -74,7 +74,9 @@ class FeesController extends Controller
             $att->expert = $request->input('type3');
 
         }
+        $att->date = \Carbon\Carbon::now()->toDateString();
         $att->save();
+
         return redirect('/attendance')->with('success', 'Attendance updated!!!');
 
     }

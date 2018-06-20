@@ -51,20 +51,21 @@
                     {{Form:: text ('phone', '', ['class' => 'form-control', 'placeholder' => '(999)-999-9999'])}}
                 </div>
             </div>
+            <div class="form-group col-md-4">
+                {{Form:: label ('rank', 'Rank')}}
+                {{Form::select('rank', ['White' => 'White',
+                'Yellow' => 'Yellow',
+                'Half Green' => 'Half Green',
+                'Green' => 'Green',
+                'Half Blue' => 'Half Blue',
+                'Blue' => 'Blue',
+                'Half Red' => 'Half Red',
+                'Red' => 'Red',
+                'Half Black' => 'Half Black',
+                'Black' => 'Black'], 'White')}}
+            </div>
         </div>
-        <div class="form-group col-md-4">
-            {{Form:: label ('rank', 'Rank')}}
-            {{Form::select('rank', ['White' => 'White',
-            'Yellow' => 'Yellow',
-            'Half Green' => 'Half Green',
-            'Green' => 'Green',
-            'Half Blue' => 'Half Blue',
-            'Blue' => 'Blue',
-            'Half Red' => 'Half Red',
-            'Red' => 'Red',
-            'Half Black' => 'Half Black',
-            'Black' => 'Black'], 'White')}}
-        </div>
+
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     </div>
     {!! Form::close() !!}

@@ -1,4 +1,4 @@
-<nav class="navbar bg-dark navbar-dark">
+<nav class="navbar bg-dark navbar-dark " style=" padding-right: 120px">
     <a class="navbar-brand" href="/">{{config("app.name")}}</a>
     <button class="collapse navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,9 +9,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/registerStudents/create">Add new Student</a>
             </li>
-            {{--<li class="nav-item">
-                <a class="nav-link" href="/registerParent/create">Register Parent</a>
-            </li>--}}
+
             <li class="nav-item">
                 <a class="nav-link" href="/registerP2S">Register Parent</a>
             </li>
@@ -24,7 +22,7 @@
                 <a class="nav-link" href="/search">Search</a>
             </li>
             <li class="nav-item dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                <button class="btn btn-secondary dropdown-toggle align" type="button" id="dropdownMenu2"
                         data-toggle="dropdown">
                     More
                 </button>

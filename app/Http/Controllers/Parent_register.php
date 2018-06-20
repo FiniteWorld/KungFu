@@ -105,7 +105,7 @@ class Parent_register extends Controller
     {
 
         $this->validate($request, [
-            'id' => 'required',
+
             'pfname' => 'required',
             'plname' => 'required',
             'pemail' => 'required',
@@ -121,6 +121,7 @@ class Parent_register extends Controller
             'relation' => $request->input('relation'),
             'pcontact' => $request->input('pcontact'),
         );
+
 
         DB::table('students')
             ->where('id', $request->get('id'))
