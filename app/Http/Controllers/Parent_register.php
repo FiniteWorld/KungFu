@@ -16,8 +16,7 @@ class Parent_register extends Controller
      */
     public function index()
     {
-        //return students::where('lname', 'Sharma')->get();
-        //return $parent = DB::select('SELECT pfname FROM students where lname= "Sharma"');
+        //
 
     }
 
@@ -53,15 +52,15 @@ class Parent_register extends Controller
 
         ]);
         $p = new students();
-        $p->pfname = $request->input('pfname');
-        $p->plname = $request->input('plname');
-        $p->pemail = $request->input('pemail');
+        $p->name = $request->input('pfname');
+        $p->lname = $request->input('plname');
+        $p->email = $request->input('pemail');
         $p->dob = $request->input('dob');
         $p->address = $request->input('address');
         $p->city = $request->input('city');
         $p->state = $request->input('state');
         $p->zip = $request->input('zip');
-        $p->pcontact = $request->input('pcontact');
+        $p->phone = $request->input('pcontact');
         $p->rank = $request->input('rank');
         $p->save();
         //return User::query()->get();
@@ -87,10 +86,7 @@ class Parent_register extends Controller
      */
     public function edit($id)
     {
-        //     $students = DB::update('update students set pname= ? where id = ?')
-//
-//        $stu= students::where('id', $stu[0])->get();
-//        return view(pages.parents)->with('stu', $stu);
+        //
     }
 
     /**

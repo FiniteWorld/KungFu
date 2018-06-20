@@ -1,35 +1,39 @@
 @extends('layout.app')
 @section('content')
-    <h1>FEE RECORD</h1>
+    <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">FEE RECORD</h1>
 
     {!! Form::open(['action'=> 'FeesController@store' , 'method' => 'POST'])!!}
-    <div class="form-row">
-        <div>
-            <div class="form-group">
+    <div class="col-md-10">
+        <div class="form-row">
+            <div class="form-group col-md-4">
                 {{Form:: label ('id', 'Student Id:')}}
                 {{Form:: text ('id', '', ['class' => 'form-control', 'placeholder' => 'Enter Student id'])}}
             </div>
-            <div class="form-group">
-                {{Form:: label ('mem_type', 'Type of Membership')}}
-                {{Form::select('mem_type', ['500' => 'Silver',
-                '1500' => 'Gold',
-                '5000' => 'Platinum'],['class' => 'form-control'])}}
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{Form:: label ('purchase_type', 'Payment Type')}}
+                {{Form::select('purchase_type', ['Beginner' => 'Beginner Test',
+                'Intermediate' => 'Intermediate Test',
+                'Expert' => 'Expert Test',
+                'Silver' => 'Silver Membership',
+                'Gold' => 'Gold Membership',
+                'Platinum' => 'Platinum Membership',
+                 'Others' => 'Others'],['class' => 'form-control'])}}
             </div>
         </div>
-        <div>
+        <div class="form-row">
             <div class="form-group">
-                {{Form:: label ('level', 'Class Level')}}
-                {{Form::select('level', ['Beginner' => 'Beginner',
-                'Intermediate' => 'Intermediate',
-                'Expert' => 'Expert'],['class' => 'form-control'])}}
+                {{Form:: label ('purchase_amount', 'Amount')}}
+                {{Form:: text ('purchase_amount', '', ['class' => 'form-control', 'placeholder' => 'Enter Amount'])}}
             </div>
-            <div class="form-group">
-                {{Form:: label ('pdt', 'Product')}}
-                {{Form:: text ('pdt', '', ['class' => 'form-control', 'placeholder' => 'Enter product Amount'])}}
-            </div>
+        </div>
+
+
+        <div class="form-row">
+            {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
         </div>
     </div>
-    {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 
     {!! Form::close() !!}
 

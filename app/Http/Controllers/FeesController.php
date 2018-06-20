@@ -18,20 +18,17 @@ class FeesController extends Controller
     {
         $this->validate($request, [
             'id' => 'required',
-            'mem_type' => 'required',
-            'level' => 'required',
-            'pdt' => 'required',
+            'purchase_type' => 'required',
+            'purchase_amount' => 'required',
 
         ]);
         $stu_p = new Stu_payment();
         $stu_p->id = $request->input('id');
-        $stu_p->mem_type = $request->input('mem_type');
-        $stu_p->level = $request->input('level');
-        $stu_p->pdt = $request->input('pdt');
+        $stu_p->purchase_type = $request->input('purchase_type');
+        $stu_p->purchase_amount = $request->input('purchase_amount');
         $stu_p->save();
 
-        //return User::query()->get();
-        return redirect('/')->with('success', 'Fee Success!');
+        return redirect('/')->with('success', 'Payment Successful!');
 
     }
 
@@ -57,30 +54,33 @@ class FeesController extends Controller
         return redirect('/')->with('success', 'Fee Success!');
 
 
-
     }
-    public function attendance(Request $request){
-        $data = Input::get('type');
 
+    public function attendance(Request $request)
+    {
 
+        $this->validate($request, [
+            'id' => 'required',
 
-        //return $Stu_payment;
+        ]);
 
-        /*$att = new attendance();
+        $att= new attendance();
         $att->id = $request->input('id');
-        if(Input::get('Beginner',true)){
+        if($request->input('type1') == 'P'){
+            $att->beginner = $request->input('type1');
+        }else if($request->input('type2') == 'P') {
+            $att->intermediate = $request->input('type2');
+        }else if($request->input('type3') == 'P'){
+            $att->expert = $request->input('type3');
 
         }
-        $att->type = $request->input('mem_type');
-        $stu_p->level = $request->input('level');
-        $stu_p->pdt = $request->input('pdt');
-        $stu_p->save();
+        $att->save();
+        return redirect('/attendance')->with('success', 'Attendance updated!!!');
 
-        //return User::query()->get();
-        return redirect('/')->with('success', 'Fee Success!');*/
     }
 
-    public function update_rank(Request $request){
+    public function update_rank(Request $request)
+    {
 
         $this->validate($request, [
             'id' => 'required',

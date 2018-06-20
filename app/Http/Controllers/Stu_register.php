@@ -17,9 +17,6 @@ class Stu_register extends Controller
      */
     public function index()
     {
-        //return students::all();
-       // $stu = students::all();
-        //return 123;
         return view('pages.promote');
     }
 
@@ -85,11 +82,6 @@ class Stu_register extends Controller
             $stu->save();
             return redirect('/')->with('success', 'Student Registered Successfully!');
         }
-        //return $age;
-        // $stu->save();
-        //return redirect('/')->with('success', 'You added the detail of parent and student correctly!!');//return User::query()->get();
-        //return redirect('/')->with('success', 'Registered Successfully!');
-        // return $age;
 
     }
 
@@ -126,6 +118,7 @@ class Stu_register extends Controller
     public function update(Request $request)
     {
         //
+
     }
 
 
@@ -142,6 +135,20 @@ class Stu_register extends Controller
 
     public function update2(Request $request)
     {
-        //
+        $this->validate($request, [
+            'id' => 'required',
+            'rank' => 'required'
+        ]);
+
+        $update_rank = array(
+            'rank' => $request->input('rank'),
+
+        );
+
+        DB::table('students')
+            ->where('id', $request->get('id'))
+            ->update($update_rank);
+
+        return redirect('/')->with('success', 'The student rank has been successfully updated!!');
     }
 }

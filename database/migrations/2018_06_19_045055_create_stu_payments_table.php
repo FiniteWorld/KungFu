@@ -16,9 +16,9 @@ class CreateStuPaymentsTable extends Migration
         Schema::create('stu_payments', function (Blueprint $table) {
             $table->increments('id')->nullable();
             $table->foreign('id')->references('id')->on('students');
-            $table->integer('mem_type');
-            $table->string('level');
-            $table->integer('pdt');
+            $table->string('purchase_type');
+            $table->date('purchase_date')->nullable();
+            $table->integer('purchase_amount');
             $table->timestamps();
         });
     }

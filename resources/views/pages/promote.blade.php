@@ -1,12 +1,14 @@
 @extends('layout.app')
 @section('content')
     <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">Change Belt Rank Here!!</h1>
-    {!! Form::open(['action'=> ['FeesController@update_rank'] ,'method' => 'POST'])!!}
-    <div class="form-group">
+    {!! Form::open(['action'=> ['Stu_register@update2'] ,'method' => 'POST'])!!}
+    <div class="col-md-6">
+    <div class="form-row">
+    <div class="form-group col-md-6" >
         {{Form:: label ('id', 'Student Id:')}}
         {{Form:: text ('id', '', ['class' => 'form-control', 'placeholder' => 'Enter Student Id'])}}
     </div>
-
+    </div>
     <div class="form-group col-md-4">
         {{Form:: label ('rank', 'Rank')}}
         {{Form::select('rank', ['White' => 'White',
@@ -20,8 +22,10 @@
         'Half Black' => 'Half Black',
         'Black' => 'Black'], 'White')}}
     </div>
+
     <div align=center>
         {{Form::submit('Update', ['class' => 'btn btn-primary'])}}
+    </div>
     </div>
     {{Form::hidden('_method', 'PUT')}}
     {!! Form::close() !!}

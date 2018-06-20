@@ -15,21 +15,21 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('lname');
-            $table->date('dob');
-            $table->string('email');
-            $table->string('address');
-            $table->string('city');
-            $table->string('state');
-            $table->string('zip');
-            $table->string('phone');
-            $table->string('rank');
-            $table->string('pfname');
-            $table->string('plname');
-            $table->string('relation');
-            $table->string('pemail');
-            $table->string('pcontact');
+            $table->string('name')->nullable();
+            $table->string('lname')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('rank')->nullable();
+            $table->string('pfname')->nullable();
+            $table->string('plname')->nullable();
+            $table->string('relation')->nullable();
+            $table->string('pemail')->nullable();
+            $table->string('pcontact')->nullable();
             $table->timestamps();
         });
     }

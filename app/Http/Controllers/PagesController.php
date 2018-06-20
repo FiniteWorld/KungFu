@@ -62,8 +62,9 @@ class PagesController extends Controller
 
         if ($choice == 'All') {
             $stu = DB::select('select * from students');
-
+            return view('pages.search2')->with('stu',$stu);
         }else if($choice == 'Attendance'){
+
 
         }else if($choice == 'Beginner'){
 

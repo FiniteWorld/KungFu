@@ -3,10 +3,6 @@
     <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">REGISTER PARENT AS A STUDENT</h1>
     {!! Form::open(['action'=>'Parent_register@store','method' => 'POST'])!!}
 
-    <div class="form-group">
-        {{Form:: label ('id', 'Student Id:')}}
-        {{Form:: text ('id', '', ['class' => 'form-control', 'placeholder' => 'Enter Student Id'])}}
-    </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             {{Form:: label ('pfname', 'First Name:')}}
@@ -53,6 +49,7 @@
             {{Form:: label ('dob', 'Date of Birth')}}
             {{Form:: date ('dob', '', ['class' => 'form-control'])}}
         </div>
+        <div class="form-row">
         <div class="form-group col-md-4">
             {{Form:: label ('rank', 'Rank')}}
             {{Form::select('rank', ['White' => 'White',
@@ -65,6 +62,7 @@
             'Red' => 'Red',
             'Half Black' => 'Half Black',
             'Black' => 'Black'], 'White')}}
+        </div>
         </div>
     </div>
 

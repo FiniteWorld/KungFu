@@ -16,9 +16,10 @@ class CreateAttendancesTable extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->increments('id')->nullable();
             $table->foreign('id')->references('id')->on('students');
-            $table->string('beginner')->nullable();
-            $table->string('Intermediate')->nullable();
-            $table->string('Expert')->nullable();
+            $table->timestamp('date')->nullable();
+            $table->string('beginner')->nullable()->default('A');
+            $table->string('intermediate')->nullable()->default('A');
+            $table->string('expert')->nullable()->default('A');
             $table->timestamps();
         });
     }

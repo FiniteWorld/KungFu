@@ -1,9 +1,11 @@
 @extends('layout.app')
 @section('content')
     <div class="container">
-        <h1> SEARCH </h1>
-    {{!! Form::open(['action'=> ['PagesController@q'] , 'method' => 'GET'])!!}}
-    <div class="form-row">
+        <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">SEARCH</h1>
+
+    {!! Form::open(['action'=> ['PagesController@q'] , 'method' => 'POST'])!!}
+    <div class="form-row ">
+        <div class="form-group col-md-4">
     {{Form::label('search', 'SEARCH')}}
     {{Form::select('category', ['All' => 'All',
      'A' => 'Attendance',
@@ -11,11 +13,15 @@
        'I' => 'Intermediate',
         'E' =>'Expert'],
          null, ['placeholder' => 'Choose a filter..'])}}
+        </div>
     </div>
 
     {{Form::submit('Search', ['class' => 'btn btn-primary'])}}
+    </div>
+    {{Form::hidden('_method', 'PUT')}}
+    {!! Form::close() !!}
 
-        <table id="example" class="table table-hover table-bordered">
+        {{--<table id="example" class="table table-hover table-bordered">
             <thead>
             <tr>
                 <th>Student ID</th>
@@ -27,7 +33,7 @@
             </thead>
             <tbody>
 
-            @foreach($stu as $stu)
+            @foreach($stu as $stu1)
                 <tr>
                     <td>{{ $stu->id }}</td>
                     <td>{{ $stu->name }}</td>
@@ -47,7 +53,6 @@
             @endforeach
             {{Form::submit('Update', ['class' => 'btn btn-primary'])}}
             </tbody>
+--}}
 
-    {{Form::hidden('_method', 'PUT')}}
-    {!! Form::close() !!}
 @endsection

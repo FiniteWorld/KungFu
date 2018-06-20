@@ -18,7 +18,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="/registerStudents">Promote</a>
+                <a class="nav-link" href="/promote">Promote</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/search">Search</a>
@@ -26,7 +26,7 @@
             <li class="nav-item dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
                         data-toggle="dropdown">
-                    Account Information
+                    More
                 </button>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="/fees">Fee Record</a>
