@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
     <h1 style="padding-top: 20px; text-align: center; font-family: 'Serif'">Change Belt Rank Here!!</h1>
-    {!! Form::open(['action'=> 'FeesController@update_rank' ,'method' => 'POST'])!!}
+    {!! Form::open(['action'=> ['FeesController@update_rank'] ,'method' => 'POST'])!!}
     <div class="form-group">
         {{Form:: label ('id', 'Student Id:')}}
         {{Form:: text ('id', '', ['class' => 'form-control', 'placeholder' => 'Enter Student Id'])}}

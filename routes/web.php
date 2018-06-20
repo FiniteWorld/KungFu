@@ -18,12 +18,17 @@ Route::get('/', 'PagesController@index');
 Route::get('/fees', 'PagesController@fee');
 Route::get('/products', 'PagesController@product');
 Route::get('/search', 'PagesController@search');
+Route::get('/search/q', 'PagesController@q');
+
 Route::get('/attendance', 'PagesController@attendance');
 Route::post('/fees','FeesController@store');
+#Route::post('/fees/update_rank', 'FeesController@update_rank');
 Route::post('/attendance', 'FeesController@store2');
 #Route::post('/register','FeesController@update_Parent');
+Route::post('/registerStudent','FeesController@update_rank');
 Route::get('/registerParent/create','Parent_register@create');
 Route::put('/registerParent/create','Parent_register@update2' );
+
 Route::resource('registerStudents','Stu_register');
 Route::resource('registerParent','Parent_register');
 Route::get('/registerP2S','PagesController@par_reg');

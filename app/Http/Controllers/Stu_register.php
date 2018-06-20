@@ -19,10 +19,8 @@ class Stu_register extends Controller
     {
         //return students::all();
        // $stu = students::all();
-        return 123;
-        //return view('pages.promote');
-
-
+        //return 123;
+        return view('pages.promote');
     }
 
     /**
